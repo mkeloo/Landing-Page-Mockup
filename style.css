@@ -2,7 +2,7 @@
 
 .light {
   --mainColor: #64bcf4;
-  --hoverColor: blue;
+  --hoverColor: #5bacdf;
   --backgroundColor: #f1f8fc;
   --darkOne: #312f3a;
   --darkTwo: #45424b;
@@ -12,7 +12,7 @@
 
 .dark {
   --mainColor: #64bcf4;
-  --hoverColor: blue;
+  --hoverColor: #5bacdf;
   --backgroundColor: #192e3a;
   --darkOne: #f3f3f3;
   --darkTwo: #fff;
@@ -59,14 +59,12 @@ a {
 
 .container {
   position: relative;
-  max-width: 90rem;
+  max-width: 81rem;
   width: 100%;
   margin: 0 auto;
   padding: 0 3rem;
   z-index: 10;
 }
-
-/* NavBar Header */
 
 header {
   position: relative;
@@ -96,7 +94,7 @@ header .container {
 }
 
 .logo h3 {
-  color: var(--darkOne);
+  color: var(--darkTwo);
   font-size: 1.55rem;
   line-height: 1.2;
   font-weight: 700;
@@ -128,7 +126,6 @@ header .container {
   border-radius: 16px;
   text-transform: capitalize;
   transition: 0.3s;
-  cursor: pointer;
 }
 
 .btn:hover {
@@ -188,7 +185,6 @@ header .container {
   transform: translateY(0) rotate(45deg);
 }
 
-/* Showcase Area */
 .showcase-area .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -212,36 +208,34 @@ header .container {
 }
 
 .showcase-area .btn {
-  box-shadow: 0 0 40px 2px rgba(6, 167, 254, 0.375);
+  box-shadow: 0 0 40px 2px rgba(0, 0, 0, 0.05);
 }
 
 .person {
   width: 123%;
-  /* transform: translate(15%, 25px); */
+  transform: translate(15%, 25px);
 }
-
-/* Bottom Area */
 
 .toggle-btn {
   display: inline-block;
   border: none;
-  background-color: var(--darkTwo);
+  background: var(--darkTwo);
   color: var(--backgroundColor);
   outline: none;
   cursor: pointer;
-  height: 45px;
-  width: 45px;
+  height: 39px;
+  width: 39px;
   border-radius: 50%;
   font-size: 1.1rem;
   transition: 0.3s;
 }
 
 .toggle-btn i {
-  line-height: 45px;
+  line-height: 39px;
 }
 
 .toggle-btn:hover {
-  background-color: var(--mainColor);
+  background: var(--mainColor);
 }
 
 .big-wrapper.light .toggle-btn i:last-child {
@@ -264,9 +258,9 @@ header .container {
   position: absolute;
   z-index: 0;
   width: 500px;
-  bottom: -130px;
+  bottom: -180px;
   left: -15px;
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 .copy {
@@ -281,13 +275,11 @@ header .container {
   0% {
     clip-path: circle(30% at -25% -25%);
   }
-
   100% {
     clip-path: circle(150% at 0 0);
   }
 }
 
-/* Responsiveness */
 @media screen and (max-width: 870px) {
   .hamburger-menu {
     display: flex;
@@ -305,7 +297,6 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.4); */
     transform: translateX(100%);
     transition: 0.5s;
   }
