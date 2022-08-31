@@ -1,57 +1,51 @@
-// Select the Elements
-var toggle_btn
-var big_wrapper
-var hamburger_menu
+// Select The Elements
+var toggle_btn;
+var big_wrapper;
+var hamburger_menu;
 
 function declare() {
-  toggle_btn = document.querySelector(".toggle-btn")
-  big_wrapper = document.querySelector(".big-wrapper")
-  hamburger_menu = document.querySelector(".hamburger-menu")
+  toggle_btn = document.querySelector(".toggle-btn");
+  big_wrapper = document.querySelector(".big-wrapper");
+  hamburger_menu = document.querySelector(".hamburger-menu");
 }
 
-const main = document.querySelector("main")
-declare()
+const main = document.querySelector("main");
 
-let dark = false
+declare();
+
+let dark = false;
 
 function toggleAnimation() {
-  dark = !dark
-
-  // Clone the wrapper (landing page)
-  let clone = big_wrapper.cloneNode(true)
-
-  // Changing the color
+  // Clone the wrapper
+  dark = !dark;
+  let clone = big_wrapper.cloneNode(true);
   if (dark) {
-    clone.classList.remove("light")
-    clone.classList.add("dark")
+    clone.classList.remove("light");
+    clone.classList.add("dark");
   } else {
-    clone.classList.remove("dark")
-    clone.classList.add("light")
+    clone.classList.remove("dark");
+    clone.classList.add("light");
   }
+  clone.classList.add("copy");
+  main.appendChild(clone);
 
-  // Cloning the other theme
-  clone.classList.add("copy")
-  main.appendChild(clone)
+  document.body.classList.add("stop-scrolling");
 
-  //   Stop-Scrolling
-  document.body.classList.add("stop-scrolling")
-
-  // removing unwanted big_Wrapper after the animation
   clone.addEventListener("animationend", () => {
-    document.body.classList.remove("stop-scrolling")
-    big_wrapper.remove()
-    clone.classList.remove("copy")
-
-    // Reset the Variables
-    declare()
-    events()
-  })
+    document.body.classList.remove("stop-scrolling");
+    big_wrapper.remove();
+    clone.classList.remove("copy");
+    // Reset Variables
+    declare();
+    events();
+  });
 }
 
 function events() {
-  toggle_btn.addEventListener("click", toggleAnimation)
+  toggle_btn.addEventListener("click", toggleAnimation);
   hamburger_menu.addEventListener("click", () => {
-    big_wrapper.classList.toggle("active")
-  })
+    big_wrapper.classList.toggle("active");
+  });
 }
-events()
+
+events();
