@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-:root {
+.light {
   --mainColor: #64bcf4;
   --hoverColor: blue;
   --backgroundColor: #f1f8fc;
@@ -8,6 +8,16 @@
   --darkTwo: #45424b;
   --lightOne: #919191;
   --lightTwo: #aaa;
+}
+
+.dark {
+  --mainColor: #64bcf4;
+  --hoverColor: blue;
+  --backgroundColor: #192e3a;
+  --darkOne: #f3f3f3;
+  --darkTwo: #fff;
+  --lightOne: #ccc;
+  --lightTwo: #e7e3e3;
 }
 
 *,
@@ -22,6 +32,11 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
 img {
   width: 100%;
 }
@@ -31,6 +46,7 @@ a {
 }
 
 .big-wrapper {
+  position: relative;
   padding: 1.7rem 0 2rem;
   width: 100%;
   min-height: 100vh;
@@ -151,4 +167,62 @@ header .container {
   color: var(--backgroundColor);
   outline: none;
   cursor: pointer;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: 0.3s;
 }
+
+.toggle-btn i {
+  line-height: 45px;
+}
+
+.toggle-btn:hover {
+  background-color: var(--mainColor);
+}
+
+.big-wrapper.light .toggle-btn i:last-child {
+  display: none;
+}
+
+.big-wrapper.light .toggle-btn i:first-child {
+  display: block;
+}
+
+.big-wrapper.dark .toggle-btn i:last-child {
+  display: block;
+}
+
+.big-wrapper.dark .toggle-btn i:first-child {
+  display: none;
+}
+
+.shape {
+  position: absolute;
+  z-index: 0;
+  width: 500px;
+  bottom: -130px;
+  left: -15px;
+  opacity: 0.3;
+}
+
+.copy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  animation: appear 1s 1 both;
+}
+
+@keyframes appear {
+  0% {
+    clip-path: circle(30% at -25% -25%);
+  }
+
+  100% {
+    clip-path: circle(150% at 0 0);
+  }
+}
+
+/* Responsiveness */
